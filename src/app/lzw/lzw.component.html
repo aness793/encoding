@@ -1,0 +1,26 @@
+<div class="container">
+   
+    <div class="input" *ngIf="!display">
+        <h1>Enter a Sequence</h1>
+        <input type='text' (keyup.enter)="encode()" [(ngModel)]=sequence>
+        <button (click)="encode()">Generate Codes</button>
+    </div>
+     <div class="display" *ngIf="display">
+        <h4>The Encoded Sequence is :</h4>
+       <h2  class="reesult">[{{encodedText}}]</h2>
+         <h1 (click)="reset()" class="newSeq"  >New Sequence +</h1>
+    </div>
+</div>
+<h1 class="dict-title" *ngIf="display">
+    the Dictionary
+</h1>
+<div class="dict" *ngIf="display" >
+    <div class="chars">
+        <h1>les characters</h1>
+        <h3 *ngFor="let char of chars"> {{char}} </h3>
+    </div> 
+    <div class="codes">
+        <h1>les codes</h1>
+        <h3 *ngFor="let code of codes" > {{code}} </h3>
+    </div>
+</div>

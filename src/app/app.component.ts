@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component , OnInit } from '@angular/core';
+import {  RouterLink, RouterOutlet  } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet , RouterLink, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'encoding';
+  path:string='';
+  constructor() {
+         this.path = window.location.pathname;
+  }
+  ngOnInit(): void {
+  }
+  ngAfterViewInit(){
+  }
+  ngOnChange():void {
+     this.path = window.location.pathname;
+       console.log(this.path)
+
+
+
+  }
 }

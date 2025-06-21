@@ -1,0 +1,144 @@
+.container {
+    margin: 0 auto;
+    padding: 1rem;
+}
+.input {
+    margin:3rem auto;
+    border:3px solid var(--secondary-color);
+    width:30rem;
+    aspect-ratio: 1;
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+.input h1 {
+    font-size:2.5rem;
+    font-weight: 600;
+}
+input {
+    width:clamp(10rem,20rem,30rem);
+    padding:1rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight:600;
+}
+input:active{
+    border: none;
+}
+.input button {
+    margin: 1rem auto;
+    padding: .5rem 1.5rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    font-size:1.4rem;
+    font-weight: 500;
+
+}
+
+    .newSeq  {
+        cursor: pointer;
+        font-size:1.4rem;
+        font-weight: 600;
+        padding:.3rem .5rem;
+        color: white;
+        background-color: var(--secondary-color);
+        border-radius: .5rem;
+
+}
+.display {
+    margin: 7rem auto;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    width:fit-content;
+    padding: 5rem;
+    border-radius: 1rem;
+    border:1px solid var(--secondary-color);
+
+}
+.result {
+    white-space: nowrap;
+}
+.dispaly h2 {
+        font-size: 1.4rem;
+}
+h4{
+    font-size: 1.6rem;
+    color:var(--secondary-color);
+    font-weight: 600;
+
+}
+.dict-title{
+    content:'dictionary:';
+    display:grid;
+    justify-self: center;
+    color:var(--secondary-color);
+    font-size: 3rem;
+    font-weight: 600;
+    margin:0;
+}
+.dict{
+    min-width: fit-content;
+    width:9rem;
+    margin: 1rem 0 1rem 0  ;
+   display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self:center;
+}
+.dict > div{
+    border:1px solid var(--primary-color);
+     display:grid;
+     grid-template-rows: auto;
+     overflow: clip;
+}
+.dict >div h1 {
+    font-size:1rem;
+    text-align: center;
+    padding: 0 .5rem;
+    color:var(--secondary-color);
+    font-weight:600;
+    height: 1.5rem;
+}
+.dict > div h3 {
+    height: 1.5rem;
+    width:100%;
+    text-align: center;
+    border-bottom:1px solid var(--primary-color);
+    font-weight:600;
+    font-size:1rem;
+    
+}
+.dict > div h3:last-child {
+    border-bottom: none;
+}
+@media (max-width:660px){
+    .dispaly h2 {
+        font-size: 1.2rem;
+}
+h4 {
+    font-size: 1.4rem;
+    content: ' the Encoded Sequence is : ';
+    color:var(--secondary-color);
+    font-weight: 600;
+
+}
+.dict-title {
+    font-size: 1.6rem;
+}
+.display {
+    padding: 2rem;
+}
+}
+@media (max-width:283px){
+    .newSeq {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,233 @@
+.input {
+    width:clamp(10rem,20rem,30rem);
+    height:clamp(15rem,25rem,35rem);
+    margin:2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+    padding: 2rem 4rem;
+
+}
+.input h1 {
+        text-align:center;
+}
+input {
+    width:clamp(10rem,20rem,30rem);
+    padding:1rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight:600;
+}
+input:active{
+    border: none;
+}
+.input button {
+    margin: 1rem auto;
+    padding: .5rem 1.5rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    font-size:1.4rem;
+
+}
+
+.newSeq {
+    display:grid;
+    justify-self:center;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight:600;
+}
+.display {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* min-width:fit-content; */
+    width:50rem;
+    /* margin:0 auto; */
+    justify-self: center;
+}
+.display > div{
+     border:1px solid white;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    /* padding: .5rem 1rem ; */
+    background-color: var(--background-color);
+    color:var(--secondary-color);
+    position: relative;
+   overflow: clip;
+
+}
+.display > div:not(:first-child) {
+    border-left:none;
+}
+.display > div:not(:last-child) {
+    border-right:none;
+}
+/* .container {
+    width: fit-content;
+    margin: 0 auto;
+} */
+.display > div * {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0.5rem;
+}
+.display h1{
+    border-bottom: 1px solid white;
+        font-size: 1rem;
+
+/* overflow: clip; */
+    
+}
+.display h3 {
+    border-bottom:1px solid white ;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height:.8rem;
+    width:100%;
+    position: relative;    
+    padding: 0.5rem;
+
+    /* overflow: clip; */
+}
+
+.lengthBefore{
+    display: flex;
+    flex-direction:column;
+}
+.lengthBefore::before {
+    content:'Length:';
+    top:0;
+    justify-self: start;
+    display:inline-flex;
+    color:var(--primary-color);
+    font-size:1rem;
+    
+}
+h3 svg {
+    color:white;
+    fill:var(--secondary-color);
+    cursor:pointer;
+}
+.calculations{
+    padding:.5rem 1rem;
+    display:grid;
+    min-width: fit-content;
+    width:20rem;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
+    gap:0;
+    justify-self: center;
+
+}
+.calculations h3 {
+    border:1px solid var(--secondary-color);
+    display:grid;
+    grid-template-columns: 40% 1fr;
+    padding:0.5rem 0.5rem ;
+}
+.calculations .calc_title {
+    /* border-right: 1px solid var(--secondary-color); */
+    padding:0.2rem 0.5rem;
+    text-align: center;
+
+}
+.calculations .value {
+    padding:0.2rem 0.5rem;
+    text-align: center;
+}
+.display_container {
+    position:relative;
+}
+.entered_sequence{
+    /* position:absolute; */
+    left:0;
+    top:0;
+    padding: 0.5rem;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.entered_sequence h1 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+.entered_sequence h3 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    text-wrap: wrap;
+}
+@media (max-width:960px){
+    .display {
+        max-width: fit-content;
+        justify-self: center;
+        margin: 0 .5rem;
+        gap:0;
+    }
+    .display div {
+        display: flex;
+        width:5rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .display > div *{
+        font-size: .8rem;
+        min-height:1rem;
+        padding:0.1rem;
+    }
+    .calculations{
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr 1fr;
+
+        width:fit-content;
+    }
+   
+
+}
+ @media (max-width:350px){
+     .calculations h3 *{
+        font-size:.8rem;
+        
+    }
+    .calculations {
+        margin:0 auto;
+    }
+    .display * {
+        font-size:.4rem;
+    }
+    .display div {
+        width:100%;
+        margin:0;
+    }
+    .lengthBefore::before {
+        font-weight: .4rem;
+    }
+    .newSeq {
+        font-size: 1rem;
+        margin-top: 2rem;
+        padding: 0.5rem ;
+    }
+    
+ }
+  @media (max-width:646px){
+    .input {
+        margin-top:6rem;
+    }
+  }

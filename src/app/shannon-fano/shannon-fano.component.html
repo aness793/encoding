@@ -1,0 +1,54 @@
+<div class="newSeq" *ngIf="display">
+ <h1 (click)="reset()" >New Sequence +</h1>
+</div>
+<div class='container'>
+   <div class="input" *ngIf="!display">
+     <h1>Enter a Sequence</h1>
+    <input type='text' (keyup.enter)="generateCodes()" [(ngModel)]=inputText>
+    <button (click)="generateCodes()">Generate Codes</button>
+   </div>
+   <div class="entered_sequence" *ngIf="display">
+        <h1>la sequence entrée :</h1>
+        <h3 class="entered" >' {{text}} '</h3>
+    </div>
+   <div class="display" *ngIf="display">
+        <div class="chars">
+        <h1>Characters</h1>
+        <h3 *ngFor='let char of characters' (click)="copyText(char)">{{char}}</h3>
+        <h3></h3>
+        </div>
+        <div class="probabilities">
+            <h1>probabilities</h1>
+            <h3 *ngFor="let prob of probabilities"> {{prob.toString().slice(0,4)}} </h3>
+            <h3> {{totalProbability}} </h3>
+        </div>
+        <div class="freqs">
+        <h1>Frequencies</h1>
+        <h3 *ngFor='let freq of frequencies' (click)="copyText(freq.toString())">{{freq}}</h3>
+        <h3>1</h3>
+        </div>
+        <div class="codes">
+        <h1>Codes</h1>
+        <h3 *ngFor='let code of codes'  (click)="copyText(code)">{{code}}</h3>
+        <h3 class="length"> {{length.toFixed(3)}} </h3>
+        </div>
+</div>
+<div class="calculations">
+    <h3 *ngIf="display" >
+        <span class="calc_title">l'Entropie: </span> 
+        <span class="value">
+            {{entropy.toString().slice(0,4)}} bit/symb 
+                <svg  (click)="copyText(entropy.toString().slice(0,4))" xmlns="http://www.w3.org/2000/svg" color="green" height="0.8rem" viewBox="0 -960 960 960" width="0.8rem" ><path d="M760-200H320q-33 0-56.5-23.5T240-280v-560q0-33 23.5-56.5T320-920h280l240 240v400q0 33-23.5 56.5T760-200ZM560-640v-200H320v560h440v-360H560ZM160-40q-33 0-56.5-23.5T80-120v-560h80v560h440v80H160Zm160-800v200-200 560-560Z"/></svg>
+   
+        </span>
+    </h3>
+                <h3 *ngIf="display">
+      <span class="calc_title">L'efficacité: </span> 
+      <span class="value">
+        %{{((entropy/length)*100).toFixed(2)}}, {{(entropy/length).toString().slice(0,6)}} 
+                <svg  (click)="copyText((entropy/length).toString().slice(0,6))" xmlns="http://www.w3.org/2000/svg" height="0.8rem" viewBox="0 -960 960 960" width="0.8rem" ><path d="M760-200H320q-33 0-56.5-23.5T240-280v-560q0-33 23.5-56.5T320-920h280l240 240v400q0 33-23.5 56.5T760-200ZM560-640v-200H320v560h440v-360H560ZM160-40q-33 0-56.5-23.5T80-120v-560h80v560h440v80H160Zm160-800v200-200 560-560Z"/></svg>
+      </span>
+    </h3>
+</div>
+</div>
+<notice *ngIf="visible" [message]="noticeMessage" ></notice>

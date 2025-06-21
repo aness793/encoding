@@ -1,0 +1,112 @@
+.input {
+    width:clamp(10rem,20rem,30rem);
+    height:clamp(15rem,25rem,35rem);
+    margin:2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+    padding: 2rem 4rem;
+
+}
+.input h1 {
+        text-align:center;
+}
+input {
+    width:clamp(10rem,20rem,30rem);
+    padding:1rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight:600;
+}
+input:active{
+    border: none;
+}
+.input button {
+    margin: 1rem auto;
+    padding: .5rem 1.5rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    font-size:1.4rem;
+
+}
+.newSeq{
+    margin:1rem auto;
+    width:clamp(10rem,20rem,30rem);
+    height:clamp(5rem,10rem,15rem);
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    position: sticky;
+    top:0;
+    z-index: 2;
+}
+.newSeq button {
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight:600;
+}
+.display {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width:fit-content;
+    margin:0 auto;
+}
+.display > div{
+     border:1px solid white;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    /* padding: .5rem 1rem ; */
+    background-color: var(--background-color);
+    color:var(--secondary-color);
+    position: relative;
+   overflow: clip;
+
+}
+.display > div:not(:first-child) {
+    border-left:none;
+}
+.display > div:not(:last-child) {
+    border-right:none;
+}
+/* .container {
+    width: fit-content;
+    margin: 0 auto;
+} */
+.display > div * {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0.5rem;
+}
+.display h1{
+    border-bottom: 1px solid white;
+        font-size: 1rem;
+
+/* overflow: clip; */
+    
+}
+.display h3 {
+    border-bottom:1px solid white ;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    height:.8rem;
+    width:100%;
+    position: relative;
+    /* overflow: clip; */
+}

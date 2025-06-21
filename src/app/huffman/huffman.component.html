@@ -1,0 +1,56 @@
+<div class="container">
+        <button class="newSeq" (click)="reset()"  *ngIf="display">+ Nouvelle séquence</button>
+   
+    <div class="input" *ngIf="!display">
+        <h1>Enter a sequence </h1>
+    <input  [(ngModel)]='inputString' (keydown.enter)="encode()" placeholder='Enter your string here' >
+    <button   (click)="encode()">Encoding</button>
+    </div>
+    <div class="entered_sequence" *ngIf="display">
+        <h1>la sequence entrée : </h1>
+        <h3 class="entered" > '  {{text}} '</h3>
+    </div>
+    <div class="display" *ngIf="display">
+        <div class="chars">
+            <h1>characters</h1>
+        <h3 *ngFor='let i of chars' (click)="copyText(i)">{{i}} </h3>
+          <h3 style="border:none; " class="tryingbefore" >  </h3>
+        </div>
+        <div class="freqs">
+            <h1>frequencies</h1>
+            <h3 *ngFor='let i of freqs' (click)="copyText(i.toString())">@if(i){
+                {{i}}
+             } </h3>
+            <h3 style="border:none;" >{{sum}} </h3>
+        </div>
+        <div class="probs">
+            <h1>probabilites</h1>
+            <h3 *ngFor='let i of probs'(click)="copyText(i.toString())">{{i}} </h3>
+            <h3 style='border:none;'>{{codeSum}} </h3>
+        </div>
+        <div class="codes">
+            <h1>codes</h1>
+            <h3 *ngFor='let i of codes'(click)="copyText(i)">{{i}} </h3>
+            <h3 style='border:none;' class="lengthBefore"> {{L.toFixed(2)}} </h3>
+        </div>
+    </div>
+    
+<div class="calculations" *ngIf="display">
+    <h3 *ngIf="display" >
+        <span class="calc_title">l'Entropie: </span> 
+        <span class="value">
+            {{entropie.toString().slice(0,4)}} bit/symb 
+                <svg  (click)="copyText(entropie.toString().slice(0,4))" xmlns="http://www.w3.org/2000/svg" color="green" height="0.8rem" viewBox="0 -960 960 960" width="0.8rem" ><path d="M760-200H320q-33 0-56.5-23.5T240-280v-560q0-33 23.5-56.5T320-920h280l240 240v400q0 33-23.5 56.5T760-200ZM560-640v-200H320v560h440v-360H560ZM160-40q-33 0-56.5-23.5T80-120v-560h80v560h440v80H160Zm160-800v200-200 560-560Z"/></svg>
+   
+        </span>
+    </h3>
+                <h3 *ngIf="display">
+      <span class="calc_title">L'efficacité: </span> 
+      <span class="value">
+        %{{((entropie/L)*100).toFixed(2)}}, {{(entropie/L).toString().slice(0,6)}} 
+                <svg  (click)="copyText((entropie/L).toString().slice(0,6))" xmlns="http://www.w3.org/2000/svg" height="0.8rem" viewBox="0 -960 960 960" width="0.8rem" ><path d="M760-200H320q-33 0-56.5-23.5T240-280v-560q0-33 23.5-56.5T320-920h280l240 240v400q0 33-23.5 56.5T760-200ZM560-640v-200H320v560h440v-360H560ZM160-40q-33 0-56.5-23.5T80-120v-560h80v560h440v80H160Zm160-800v200-200 560-560Z"/></svg>
+      </span>
+    </h3>
+</div>
+</div>
+<notice *ngIf="visible" [message]="noticeMessage" ></notice>

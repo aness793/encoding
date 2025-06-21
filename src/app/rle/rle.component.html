@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="input" *ngIf="!display">
+        <h1>Enter a Sequence</h1>
+        <input type='text' (keyup.enter)="encode()" [(ngModel)]=inputString>
+        <button (click)="encode()">Generate Codes</button>
+    </div>
+    <div class="display" *ngIf="display">
+       <h2>{{encodedText}}</h2>
+        <div class="newSeq" >
+         <h1 (click)="reset()" >New Sequence +</h1>
+        </div>
+    </div>
+</div>

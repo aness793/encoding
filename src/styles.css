@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #e4e4e4; /* Green */
+    --secondary-color:#FFBF00; 
+    --third:#8B8000;/* Red */
+    --background-color: #1f1e1e; /* Light Gray */
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+a {
+    all:unset;
+    cursor:pointer;
+}
+a:hover {
+    all:unset;
+}
+ i , ul ,a  {
+    text-decoration:none;
+    list-style: none;
+    color: var(--primary-color);
+    
+}
+*{
+     outline: none;
+     font-family:'Barlow','sans serif';
+}
