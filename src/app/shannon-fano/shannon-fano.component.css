@@ -125,20 +125,36 @@ h3 svg {
 .input h1 {
         text-align:center;
 }
-@media (min-width:1000px){
 .input {
-      width:clamp(50rem,50rem,50rem);
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top:6rem;
+    min-width: fit-content;
+    justify-self:center;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+    padding: 2rem 2rem;
 
 }
+.input > * {
+    display: flex;
+    justify-content:center;
+    align-items:center;
 }
+.input h1 {
+        text-align:center;
+}
+
 input {
-    width:clamp(10rem,20rem,30rem);
-    padding:1rem 2rem;
+    width:80%;
+    padding:.8rem 2rem;
     border-radius: 0.5rem;
     border: none;
     text-align: center;
     font-size: 1.4rem;
     font-weight:600;
+    margin-inline:0.2rem;
 }
 input:active{
     border: none;
@@ -155,15 +171,14 @@ input:active{
 
 }
   @media (max-width:646px){
-  .input {
+ .input {
       margin-top:6rem;
       
   }
   .input input {
-    max-width:80%;
-    padding:.5rem .2rem;
-    font-size:1rem;
-  }
+        padding:.6rem 0rem;
+        font-size: .8rem;
+}
   .input h1 {
     font-size:2rem;
     text-align: center;
@@ -175,10 +190,19 @@ input:active{
 
   }
   .input  {
-    padding:0.2rem .1rem;
+    padding:0.2rem 2rem;
   }
 
   }
+  @media (max-width:350px){
+    .input div h1 {
+        font-size: 1.6rem;
+    }
+    .input div input {
+        font-size:.8rem;
+        width:80%;
+    }
+}
 @media (max-width:575px){
     .display{
         width:fit-content;

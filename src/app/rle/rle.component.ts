@@ -17,11 +17,13 @@ constructor( private rle:RleService, private app:AppComponent){
     this.app.path = window.location.pathname;
   }
 inputString:string=''
+tooLong=false
 display:boolean=false
 reset(){
   this.display=false
   this.inputString=''
     this.encodedText=''
+    this.tooLong = false
 }
 encodedText=''
 encode(){
@@ -31,6 +33,9 @@ encode(){
   }
   this.display=true
   this.encodedText = this.rle.RLE_Encoding(this.inputString)
+  if(this.encodedText.length>10){
+    this.tooLong=true
+  }
   
 }
 }
