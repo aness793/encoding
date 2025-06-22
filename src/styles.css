@@ -29,3 +29,7 @@ a:hover {
      outline: none;
      font-family:'Barlow','sans serif';
 }
+*, *::before, *::after {
+  box-sizing: border-box;
+  overflow-x: clip;
+}

@@ -4,8 +4,8 @@
 <div class='container'>
    <div class="input" *ngIf="!display">
      <h1>Enter a Sequence</h1>
-    <input type='text' (keyup.enter)="generateCodes()" [(ngModel)]=inputText>
-    <button (click)="generateCodes()">Generate Codes</button>
+    <input type='text' (keyup.enter)="generateCodes()" [(ngModel)]=inputText placeholder='Enter a sequence here'>
+    <button (click)="generateCodes()">Encode</button>
    </div>
    <div class="entered_sequence" *ngIf="display">
         <h1>la sequence entrée :</h1>

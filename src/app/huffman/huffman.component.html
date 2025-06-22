@@ -3,8 +3,8 @@
    
     <div class="input" *ngIf="!display">
         <h1>Enter a sequence </h1>
-    <input  [(ngModel)]='inputString' (keydown.enter)="encode()" placeholder='Enter your string here' >
-    <button   (click)="encode()">Encoding</button>
+    <input  [(ngModel)]='inputString' (keydown.enter)="encode()" placeholder='Enter a sequence here' >
+    <button   (click)="encode()">Encode</button>
     </div>
     <div class="entered_sequence" *ngIf="display">
         <h1>la sequence entrée : </h1>
