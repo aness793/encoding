@@ -10,7 +10,7 @@ import {  RouterLink, RouterOutlet  } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'encoding';
-  path:string='';
+  path?:string;
   constructor() {
          this.path = window.location.pathname;
   }
@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
   }
   ngOnChange():void {
      this.path = window.location.pathname;
-       console.log(this.path)
 
 
 

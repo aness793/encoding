@@ -2,7 +2,7 @@
    
     <div class="input" *ngIf="!display">
         <div><h1>Enter a Sequence</h1></div>
-        <div><input type='text' (keyup.enter)="encode()" [(ngModel)]=sequence placeholder='Enter a sequence here'></div>
+        <div><input type='text' (keyup.enter)="encode()" [(ngModel)]=sequence placeholder='Enter a sequence'></div>
         <div><button (click)="encode()">Encode</button></div>
     </div>
      <div class="display" *ngIf="display">
